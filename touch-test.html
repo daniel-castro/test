@@ -1,0 +1,23 @@
+<html>
+    <head>
+        <title>Touch Detection Test</title>
+        <script type="text/javascript">
+            function DetectTouch()
+            {
+                if ("ontouchstart" in document.documentElement)
+                {
+                    document.getElementById("touchStatus").innerText = "Supported";
+                }
+                else
+                {
+                    document.getElementById("touchStatus").innerText = "Not supported";
+                }
+            }
+
+            window.addEventListener("load", DetectTouch);
+        </script>
+    </head>
+    <body>
+        <div>Touch Status: <span id="touchStatus"></span></div>
+    </body>
+</html>

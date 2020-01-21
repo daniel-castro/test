@@ -1,23 +1,17 @@
 <html>
     <head>
-        <title>Touch Detection Test</title>
+        <title>Chrome BSSO IFrame Test</title>
         <script type="text/javascript">
-            function DetectTouch()
+            function SSO()
             {
-                if ("ontouchstart" in document.documentElement)
-                {
-                    document.getElementById("touchStatus").innerText = "Supported";
-                }
-                else
-                {
-                    document.getElementById("touchStatus").innerText = "Not supported";
-                }
+                var iframe = document.createElement("iframe");
+                iframe.src = "https://login.microsoftonline.com/common/oauth2/authorize?client_id=4345a7b9-9a63-4910-a426-35363201d503&redirect_uri=https%3a%2f%2fwww.office.com%2flanding&response_type=code+id_token&scope=openid+profile&response_mode=form_post&nonce=637152186321069170.YWE2Yjg2NmYtMWY0NC00YTQ0LTgzZWQtYWQzZWIzYmQ5ZWU1ZDkzYTgzZDgtOGM2Yi00YTI3LTgxNTQtZjc1NWVjODYwNGYx&ui_locales=en-US&mkt=en-US&client-request-id=38de12ab-5a79-46a9-b0c1-7906c7645df8&state=URQdcxk6GbsQ9aEkC2h8EtMuEG8j4GcKujoJcHCrWE9emGw4qkH96a39rCCIyCbMpcJHdfmg8zo5CELngtqdcSWke5menZrS79YXzkfpzbkj3k0nvAHGfFXhU9P-F-5astlK_7NUuRk1rW4pHh5krESKFgsRBnjQR1QzyuWFnhC08v9Tbq0J_3M82x-3nnkkGwzUqgEHMmNRSHodk-BvVFA9CTIaDYPxNCV4zPIHsZxbd3Cu-nQNYZS9NOFinyllW62oQpQdjzyOXnSWQWiaWg&x-client-SKU=ID_NETSTANDARD2_0&x-client-ver=6.2.0.0";
+                document.body.appendChild(iframe);
             }
 
-            window.addEventListener("load", DetectTouch);
+            window.addEventListener("load", SSO);
         </script>
     </head>
     <body>
-        <div>Touch Status: <span id="touchStatus"></span></div>
     </body>
 </html>
